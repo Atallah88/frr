@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Football Academy</title>
+<link rel="icon" type="image/x-icon" href="https://scontent.xx.fbcdn.net/v/t1.15752-9/462553790_541471665291155_7616349276816224170_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=DnObshRVAGgQ7kNvgE8oVLW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHn5gZxschUYHU4eeYYe3qZ7Zem0X0fZX_5wOXaFGp40w&oe=677F8A4B">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap" rel="stylesheet">
+    
+<style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #f7f7f7;
+            color: #333;
+            overflow-x: hidden;
+            line-height: 1.6;
+        }
+
+        /* Splash Screen Styles */
+        .splash-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(44, 62, 80, 0.9);
+            z-index: 999;
+        }
+
+        .splash-screen img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Content */
+        .main-content {
+            display: none;
+            padding: 50px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+            animation: fadeIn 2s ease-in-out forwards;
+        }
+
+        /* Header */
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        header h1 {
+            font-size: 56px;
+            color: #e74c3c;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        header p {
+            font-size: 20px;
+            color: #7f8c8d;
+        }
+
+        /* Modern Button Styles */
+        .btn-53 {
+            background-color: red;
+            color: #fff;
+            border-radius: 50px;
+            padding: 15px 30px;
+            font-size: 22px;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            display: inline-block;
+        }
+
+        .btn-53:hover {
+            background-color: #e74c3c;
+            transform: scale(1.1);
+        }
+
+        /* Instagram Icon */
+        .instagram-link {
+            margin-top: 40px;
+        }
+
+        .instagram-link img {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            transition: transform 0.3s ease;
+        }
+
+        .instagram-link img:hover {
+            transform: scale(1.2);
+        }
+
+        /* Footer Styles */
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            font-size: 16px;
+            color: #7f8c8d;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #c0392b;
+        }
+
+        /* Animation for Main Content */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+
+        /* Coaches Section */
+        .coaches-section {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .coach-card {
+            width: 250px;
+            text-align: center;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .coach-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .coach-card h3 {
+            font-size: 20px;
+            color: #e74c3c;
+            margin: 15px 0;
+        }
+
+        .coach-card p {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        .coach-card:hover {
+            transform: scale(1.05);
+        }
+
+        /* Mobile and Responsive Design */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 40px;
+            }
+
+            header p {
+                font-size: 18px;
+            }
+
+            .academy-details h2 {
+                font-size: 28px;
+            }
+
+            .academy-details p {
+                font-size: 16px;
+                padding: 0 20px;
+            }
+
+            .btn-53 {
+                font-size: 20px;
+                padding: 12px 25px;
+            }
+
+            .coaches-section {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .coach-card {
+                width: 90%;
+                margin-bottom: 20px;
+            }
+        }
+</style>
+</head>
+<body>
+
+<!-- Splash Screen -->
+<div class="splash-screen">
+<img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462553790_541471665291155_7616349276816224170_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=105&ccb=1-7&_nc_sid=0024fc&_nc_ohc=DnObshRVAGgQ7kNvgE8oVLW&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHn5gZxschUYHU4eeYYe3qZ7Zem0X0fZX_5wOXaFGp40w&oe=677F8A4B" alt="Football Academy GIF">
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <header>
+        <h1>Welcome to Our Football Academy</h1>
+        <p>Your Journey to Become a Football Star Starts Here!</p>
+    </header>
+
+    <section class="academy-details">
+        <h2>Join Our Academy Today!</h2>
+        <p>Take the first step towards achieving your football dreams with the best training and coaching.</p>
+        
+<!-- Add images for academy -->
+<img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462548013_1186753495735795_4488724211287624636_n.jpg?stp=dst-jpg_s480x480_tt6&_nc_cat=100&ccb=1-7&_nc_sid=0024fc&_nc_ohc=iy31FSJ28bcQ7kNvgGXESla&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QHKuN35sEpC4mIecUUNZ1TfMBzYkhwxVv96o_7lNwWrZQ&oe=677FA880" alt="Academy Image">
+
+<!-- Coaches Section: Goalkeeper Coach & Player Coach -->
+<div class="coaches-section">
+    <!-- Goalkeeper Coach -->
+    <div class="coach-card">
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462565700_2883958621764156_5747286025093309786_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=108&ccb=1-7&_nc_sid=0024fc&_nc_ohc=kbBPAd0GzIgQ7kNvgEttj4z&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QG5w7wFsXaLGPnde0l-IARci8Ne4XR_S9mkoCL0VmBU2Q&oe=677FB645" alt="Goalkeeper Coach">
+        <h3>Goalkeeper Coach</h3>
+        <p>Experienced goalkeeper coach with over 10 years of experience, developing the best goalkeepers.</p>
+    </div>
+    <!-- Player Coach -->
+    <div class="coach-card">
+        <img src="https://scontent.xx.fbcdn.net/v/t1.15752-9/462544551_1028474359028034_6830419034612406014_n.jpg?stp=dst-jpg_p480x480_tt6&_nc_cat=103&ccb=1-7&_nc_sid=0024fc&_nc_ohc=KfHeX2wOhFIQ7kNvgHG65uA&_nc_ad=z-m&_nc_cid=0&_nc_zt=23&_nc_ht=scontent.xx&oh=03_Q7cD1QFeJLnYSWIb_vvVnrPhCdlRoiuF2Huwm0ZAcX5gtyrTvg&oe=677FBDE0" alt="Player Coach">
+        <h3>Player Coach</h3>
+        <p>Specialized in player development, training players to reach their full potential on the field.</p>
+    </div>
+</div>
+
+<!-- Button Centered -->
+<button class="btn-53">Get Started</button>
+
+<!-- Instagram Link -->
+<div class="instagram-link">
+<a href="https://www.instagram.com/alrayansc1/?hl=ar" target="_blank">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram">
+</a>
+</div>
+</section>
+
+<footer>
+<p>&copy; 2024 Football Academy. All Rights Reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+</footer>
+</div>
+
+<script>     
+// Function to remove the splash screen and show the main content after GIF finishes
+window.onload = function() {
+setTimeout(function() {
+document.querySelector('.splash-screen').style.display = 'none';
+        document.querySelector('.main-content').style.display = 'block';
+    }, 4000); // Adjust the time to match the GIF duration
+};
+</script>
+
+</body>
+</html>
+
+
+
